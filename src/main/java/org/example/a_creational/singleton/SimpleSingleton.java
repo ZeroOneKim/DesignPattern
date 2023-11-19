@@ -9,8 +9,6 @@ package org.example.a_creational.singleton;
  */
 public class SimpleSingleton {
     private String port;
-    private String emailId;
-    private String passwordSMTP;
 
     private static final SimpleSingleton ob = new SimpleSingleton();
 
