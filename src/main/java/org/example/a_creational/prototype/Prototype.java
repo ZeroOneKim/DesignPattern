@@ -15,6 +15,20 @@ public class Prototype implements ProtoImplCrimainal{
     }
 
     public Prototype prototype() {
-        return null;
+        List<String> tempList = new ArrayList<String>();
+        for (String criminal : this.criminalList) {
+            tempList.add(criminal);
+        }
+        return new Prototype(tempList);
     }
+
+    public void loadCriminal() {
+        criminalList.add("Bad Kim");
+        criminalList.add("Bad Lee");
+    }
+
+    public List<String> getCriminal() {
+        return criminalList;
+    }
+
 }
