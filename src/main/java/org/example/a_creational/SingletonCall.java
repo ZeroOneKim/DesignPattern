@@ -1,5 +1,6 @@
 package org.example.a_creational;
 
+import org.example.a_creational.singleton.LazySingleton;
 import org.example.a_creational.singleton.SimpleSingleton;
 import org.example.a_creational.singleton.Singleton;
 
@@ -9,7 +10,7 @@ import org.example.a_creational.singleton.Singleton;
 public class SingletonCall {
     SimpleSingleton simpleSingleton = SimpleSingleton.getOb();
     Singleton singleton = Singleton.getKey();
-
+    private LazySingleton lazySingleton = LazySingleton.canExe();
     /**
      * 1번 방식의 경우에는 클래스 로딩시 인스턴스를 생성한다. 빠르게 접근할 수 있으나,
      * 클래스 호출 시 항상 인스턴스가 생성되므로 자원낭비가 발생할 수 있다.
@@ -23,7 +24,7 @@ public class SingletonCall {
 
         S.simpleSingletonExe();     //1번 예시
         S.singleton();              //2번 예시
-
+        S.LazySingleton();          //3번 예시
 
     }
     public String simpleSingletonExe() {
@@ -32,4 +33,6 @@ public class SingletonCall {
     public String singleton() {
         return singleton.getSecretKey();
     }
+    public String LazySingleton() { return lazySingleton.getPhone(); }
+
 }
