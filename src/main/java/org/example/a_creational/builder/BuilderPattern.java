@@ -1,5 +1,11 @@
 package org.example.a_creational.builder;
 
+/**
+ * Builder 패턴.
+ * 1. 이와 같은 프로그래밍 작성 패턴은 두 클래스 간의 관계에 대한 파악을 쉽게 할 수 있다.
+ * 2. inner class 의 경우 static으로 선언 하여 주는이유가 정적 내부 클래스는 외부 클래스의 인스턴스 없이도 생성할 수 있는데, 만일 일반
+ *    내부 클래스로 구성한다면 내부 클래스를 생성하기도 전에 외부 클래스를 인스턴스화 해야 한다.
+ */
 public class BuilderPattern {
     private Boolean noodle;
     private Boolean source;
@@ -12,7 +18,7 @@ public class BuilderPattern {
         return answer;
     }
 
-    public class Recipe {
+    public static class Recipe {
         private BuilderPattern builderPattern = new BuilderPattern();
 
         Boolean noodle;
