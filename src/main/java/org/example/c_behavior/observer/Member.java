@@ -1,6 +1,8 @@
 package org.example.c_behavior.observer;
 
 public interface Member {
-    void newMember();
-    void memberFired();
+    void hobbyMember(Says says);
+    void playerMember(Says says);
+
+    void memberFired(String Wallalla);
 }
