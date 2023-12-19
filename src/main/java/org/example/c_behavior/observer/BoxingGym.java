@@ -1,11 +1,13 @@
 package org.example.c_behavior.observer;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+
+//취미반과 선수부를 나눠야함.
 
 public class BoxingGym implements Member{
     private List<Says> memberList = new ArrayList<>();
+    private List<Says> playerMemberList = new ArrayList<>();
 
     public void hobbyPerson() {
         System.out.println("취미반 등록 요청!");
@@ -27,9 +29,8 @@ public class BoxingGym implements Member{
     }
 
     @Override
-    public void memberFired(Says says) {
-        memberList.remove(says);
-    }
+    public void memberFired(Says says) { memberList.remove(says); }
+
     @Override
     public void processing(String talk) {
         memberList.forEach(memberList -> memberList.say(talk));
