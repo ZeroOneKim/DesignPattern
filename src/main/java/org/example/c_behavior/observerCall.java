@@ -10,11 +10,13 @@ public class observerCall {
         Says user2 = new User2();
         Says user3 = new User3();
 
-        BG.hobbyMember(user1);
-        BG.hobbyMember(user2);
-        BG.playerMember(user3);
+        BG.registerBoxing(user1);
+        BG.registerBoxing(user2);
+        BG.registerBoxing(user3);
+        BG.notifyMessage();
+        System.out.println("");
 
-        BG.hobbyPerson();
-        BG.playerPerson();
+        BG.removeBoxing(user3);
+        BG.notifyMessage();
     }
 }
