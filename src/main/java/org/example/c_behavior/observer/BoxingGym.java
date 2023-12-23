@@ -3,36 +3,23 @@ package org.example.c_behavior.observer;
 import java.util.ArrayList;
 import java.util.List;
 
-//취미반과 선수부를 나눠야함.
-
 public class BoxingGym implements Member{
-    private List<Says> memberList = new ArrayList<>();
-    private List<Says> playerMemberList = new ArrayList<>();
+    List<Says> saysList = new ArrayList<>();
 
-    public void hobbyPerson() {
-        System.out.println("취미반 등록 요청!");
-        processing("취미반 등록 완료");
-    }
-    public void playerPerson() {
-        System.out.println("선수부 등록 요청!");
-        processing("선수부 등록 완료");
+    public void registerBoxing(Says says) {
+        saysList.add(says);
+        System.out.println(says + " 복싱짐 등록 완료");
     }
 
-    @Override
-    public void hobbyMember(Says says) {
-        memberList.add(says);
+    public void removeBoxing(Says says) {
+        saysList.remove(says);
+        System.out.println(says + " 복싱짐 등록 취소");
     }
 
-    @Override
-    public void playerMember(Says says) {
-        memberList.add(says);
+    public void notifyMessage() {
+        for(Says says : saysList) {
+            says.say();
+        }
     }
 
-    @Override
-    public void memberFired(Says says) { memberList.remove(says); }
-
-    @Override
-    public void processing(String talk) {
-        memberList.forEach(memberList -> memberList.say(talk));
-    }
 }
